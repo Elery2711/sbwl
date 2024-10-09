@@ -1,16 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { AuthProvider } from "./context/AuthContext";
+import { BrowserRouter } from "react-router-dom";
+import AppRoutes from './AppRoutes';
+import { NavBar } from './components/NavBar';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      
-    </>
-  )
+    <AuthProvider>
+      <BrowserRouter>
+        <NavBar />  
+        <AppRoutes />
+      </BrowserRouter>
+    </AuthProvider>
+  );
 }
 
 export default App
